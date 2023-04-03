@@ -1,5 +1,5 @@
 
-[![](https://jitpack.io/v/Uroria/PulsarPlus.svg)](https://jitpack.io/#Uroria/PulsarPlus)
+[![](https://jitpack.io/v/Uroria/BetterTeams.svg)](https://jitpack.io/#Uroria/BetterTeams)
 
 ## Better Teams
 **A very simple, lightweight library extension to Bukkit scoreboards**
