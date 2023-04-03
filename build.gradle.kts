@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    id("maven-publish")
 }
 
 group = "com.uroria"
@@ -19,4 +20,22 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/uroria/betterteams")
+            credentials {
+                username = System.getenv("USERNAME")
+                password = System.getenv("TOKEN")
+            }
+        }
+    }
+    publications {
+        register<MavenPublication>("gpr") {
+            from(components["java"])
+        }
+    }
 }
