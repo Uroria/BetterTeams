@@ -59,6 +59,12 @@ public final class BetterScoreboard {
         team.setOption(option, optionStatus);
     }
 
+    public void setCanSeeFriendlyInvisibles(Player player, int weight, boolean value) {
+        if (!teams.containsKey(player.getUniqueId())) return;
+        Team team = getTeam(player, weight);
+        team.setCanSeeFriendlyInvisibles(value);
+    }
+
     private Team getTeam(Player player, int weight) {
         Team team = getTeam(player.getUniqueId()).orElse(null);
         if (team == null) {
