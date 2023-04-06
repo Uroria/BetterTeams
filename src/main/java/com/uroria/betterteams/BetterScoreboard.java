@@ -36,25 +36,25 @@ public final class BetterScoreboard {
     }
 
     public void setPrefix(Player player, int weight, Component prefix) {
-        if (this.teams.containsKey(player.getUniqueId())) return;
+        if (!this.teams.containsKey(player.getUniqueId())) return;
         Team team = getTeam(player, weight);
         team.prefix(prefix);
     }
 
     public void setSuffix(Player player, int weight, Component suffix) {
-        if (this.teams.containsKey(player.getUniqueId())) return;
+        if (!this.teams.containsKey(player.getUniqueId())) return;
         Team team = getTeam(player, weight);
         team.suffix(suffix);
     }
 
     public void setColor(Player player, int weight, NamedTextColor color) {
-        if (this.teams.containsKey(player.getUniqueId())) return;
+        if (!this.teams.containsKey(player.getUniqueId())) return;
         Team team = getTeam(player, weight);
         team.color(color);
     }
 
     public void setOption(Player player, int weight, Team.Option option, Team.OptionStatus optionStatus) {
-        if (this.teams.containsKey(player.getUniqueId())) return;
+        if (!this.teams.containsKey(player.getUniqueId())) return;
         Team team = getTeam(player, weight);
         team.setOption(option, optionStatus);
     }
