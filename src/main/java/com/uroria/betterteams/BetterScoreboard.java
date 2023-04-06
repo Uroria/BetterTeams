@@ -24,12 +24,14 @@ public final class BetterScoreboard {
         player.setScoreboard(this.scoreboard);
         Team team = getTeam(player, weight);
         this.teams.put(player.getUniqueId(), team);
+        team.addPlayer(player);
     }
 
     public void unregisterPlayer(Player player) {
         Team team = getTeam(player.getUniqueId()).orElse(null);
         this.teams.remove(player.getUniqueId());
         if (team == null) return;
+        team.removePlayer(player);
         team.unregister();
     }
 
