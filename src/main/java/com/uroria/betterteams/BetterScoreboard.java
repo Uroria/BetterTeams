@@ -24,7 +24,6 @@ public final class BetterScoreboard {
         player.setScoreboard(this.scoreboard);
         Team team = getTeam(player, weight);
         this.teams.put(player.getUniqueId(), team);
-        team.addPlayer(player);
     }
 
     public void unregisterPlayer(Player player) {
@@ -70,6 +69,7 @@ public final class BetterScoreboard {
         if (team == null) {
             team = this.scoreboard.getTeam(weight + player.getName());
             if (team == null) team = this.scoreboard.registerNewTeam(weight + player.getName());
+            team.addPlayer(player);
             this.teams.put(player.getUniqueId(), team);
         }
         return team;
